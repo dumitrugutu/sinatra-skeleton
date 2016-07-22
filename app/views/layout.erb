@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+</head>
+<body>
+  <div class="header-bar">
+    <div class="home">
+      <% if logged_in? %>
+        <a href="/">home</a> |
+        <a href="/logout">log out</a>
+      <% else %>
+        <a href="/">home</a> |
+        <a href="/login">log in</a> |
+        <a href="/users/new">register</a>
+      <% end %><br>
+    </div>
+
+    <div class="logo-container">
+      <a href="/" class="logo"><h2 class="overflow-logo">Comb Overflow</h2></a> 
+    </div>
+  </div>
+
+    <%= yield %>
+</body>
+</html>
